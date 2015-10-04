@@ -1,1 +1,17 @@
-Testing
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Testing grunt-typographic-adoption</title>
+</head>
+<body>
+  <h1>Black Widow</h1>
+
+  <p>Black Widow is a fictional superhero appearing in comic books published by Marvel Comics. Created by editor and plotter Stan Lee, scripter Don Rico, and artist Don Heck, the character first appeared in Tales of Suspense No. 52 (April 1964).</p>
+
+  <blockquote>Five years ago, I was escorting a nuclear engineer out of Iran. Somebody shot out my tires near Odessa. We lost control, went straight over a cliff. I pulled us out. But the Winter Solider was there. I was covering my engineer so he shot him straight through me. Soviet slug. No rifling. Bye bye, bikinis.</blockquote>
+
+  <p>The Black Widow was visually updated in 1970: The Amazing Spider-Man No. 86 (July 1970) reintroduced her with shoulder-length red hair (instead of her former short black hair), a skintight black costume, and wristbands which fired spider threads. This would become the appearance most commonly associated with the character.</p>
+
+  <p>Courtesy of Wikipedia.</p>
+</body>
+</html>
