@@ -15,12 +15,7 @@
   "bugs": {
     "url": "https://github.com/smaxtastic/grunt-typographic-adoption/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/smaxtastic/grunt-typographic-adoption/blob/master/LICENSE-MIT"
-    }
-  ],
+  "license": "MIT",
   "engines": {
     "node": ">= 0.8.0"
   },
