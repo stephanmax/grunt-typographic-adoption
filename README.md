@@ -45,6 +45,7 @@ grunt.initConfig({
 
 #### options.selectors
 Type: `Array`
+
 Default value: `['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'blockquote', 'th', 'td', 'dt', 'dd', 'li']`
 
 An array of standard CSS selectors to control which elements get processed by the task.
