@@ -10,39 +10,31 @@
 
 module.exports = function(grunt) {
 
+  var cheerio = require('cheerio');
+
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
   grunt.registerMultiTask('typographic_adoption', 'A small, educational Grunt plugin that tackles typographic widows in HTML block elements', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
-      punctuation: '.',
-      separator: ', '
+      selectors: 'h1.h2.h3.h4.h5.h6.p.blockquote.th.td.dt.dd.li'.split('.')
     });
 
     // Iterate over all specified file groups.
     this.files.forEach(function(f) {
-      // Concat specified files.
-      var src = f.src.filter(function(filepath) {
-        // Warn on and remove invalid source files (if nonull was set).
-        if (!grunt.file.exists(filepath)) {
-          grunt.log.warn('Source file "' + filepath + '" not found.');
-          return false;
-        } else {
-          return true;
-        }
-      }).map(function(filepath) {
-        // Read file source.
-        return grunt.file.read(filepath);
-      }).join(grunt.util.normalizelf(options.separator));
+      var filepath = f.src, content, $;
 
-      // Handle options.
-      src += options.punctuation;
+      content = grunt.file.read(filepath);
+      $ = cheerio.load(content, { decodeEntities: false });
 
-      // Write the destination file.
-      grunt.file.write(f.dest, src);
+      $(options.selectors.join(',')).each(function() {
+        var text = $(this).html();
+        text = text.replace(/ ([^ ]*)$/, '&nbsp;$1');
+        $(this).html(text);
+      });
 
-      // Print a success message.
+      grunt.file.write(f.dest, $.html());
       grunt.log.writeln('File "' + f.dest + '" created.');
     });
   });
