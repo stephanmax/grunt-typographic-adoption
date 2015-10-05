@@ -1,6 +1,12 @@
 # grunt-typographic-adoption
 
-> A small, educational Grunt plugin that tackles typographic widows in HTML block elements
+> A small, educational Grunt plugin that tackles typographic orphans in HTML block elements
+
+I created this Grunt plugin to accompany my tutorial on SitePoint (yet to be published). It implements a simple task that replaces the last space in block elements with a non-breakable space to avoid typographic orphans.
+
+![Typographic orphans and widows](http://www.smashingmagazine.com/images/typography-tips/image5.jpg)
+
+The image above appeared in the article [*8 Simple Ways to Improve Typography In Your Designs*](http://www.smashingmagazine.com/2009/04/8-simple-ways-to-improve-typography-in-your-designs/) by Antonio Carusone on Smashing Magazine.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
@@ -37,46 +43,39 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
-Type: `String`
-Default value: `',  '`
+#### options.selectors
+Type: `Array`
+Default value: `['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'blockquote', 'th', 'td', 'dt', 'dd', 'li']`
 
-A string value that is used to do something with whatever.
-
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
+An array of standard CSS selectors to control which elements get processed by the task.
 
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+This example would tackle typographic orphans in all block elements specified in the default value of `options.selectors`.
 
 ```js
 grunt.initConfig({
   typographic_adoption: {
     options: {},
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+      'dest/default_options': [ 'src/sourcefile' ],
     },
   },
 });
 ```
 
 #### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+This example shows how you can overwrite the default value of `options.selectors` with any array of standard CSS selectors to steer which elements get processed by this task.
 
 ```js
 grunt.initConfig({
   typographic_adoption: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      selectors: ['p', '.quote', '#masthead-title']
     },
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+      'dest/default_options': [ 'src/sourcefile' ],
     },
   },
 });
@@ -86,4 +85,7 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+
+- 0.1.0
+
+  First version

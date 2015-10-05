@@ -1,6 +1,6 @@
 {
   "name": "grunt-typographic-adoption",
-  "description": "A small, educational Grunt plugin that tackles typographic widows in HTML block elements",
+  "description": "A small, educational Grunt plugin that tackles typographic orphans in HTML block elements",
   "version": "0.1.0",
   "homepage": "https://github.com/smaxtastic/grunt-typographic-adoption",
   "author": {
@@ -32,7 +32,15 @@
     "grunt": "~0.4.5"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "typography",
+    "orphan",
+    "widow",
+    "educational",
+    "sitepoint",
+    "grunt",
+    "demo",
+    "tutorial"
   ],
   "dependencies": {
     "cheerio": "^0.19.0"
