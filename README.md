@@ -2,9 +2,9 @@
 
 > A small, educational Grunt plugin that tackles typographic orphans in HTML block elements
 
-I created this Grunt plugin to accompany my tutorial on SitePoint (yet to be published). It implements a simple task that replaces the last space in block elements with a non-breakable space to avoid typographic orphans.
+I created this Grunt plugin to accompany my tutorial [Build and Publish Your Own Grunt Plugin](https://www.sitepoint.com/build-and-publish-your-own-grunt-plugin/) on SitePoint. It implements a simple task that replaces the last space in block elements with a non-breakable space to avoid typographic orphans.
 
-![Typographic orphans and widows](http://www.smashingmagazine.com/images/typography-tips/image5.jpg)
+![Typographic orphans and widows](https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/94951ff0-b132-4e39-a108-e540a5d83b4a/image5.jpg)
 
 The image above appeared in the article [*8 Simple Ways to Improve Typography In Your Designs*](http://www.smashingmagazine.com/2009/04/8-simple-ways-to-improve-typography-in-your-designs/) by Antonio Carusone on Smashing Magazine.
 
